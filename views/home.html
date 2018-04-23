@@ -3,19 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<title>Hello World!</title>
+	<title>Monte Carlo Method demonstration</title>
+	
+	<link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+	
+	<!-- Custom CSS !-->
+	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-	<header>
-		<h1>Hello world!</h1>
+	<header class="tab-group row center-align">
+		<div class="tab-item active col s6 blue-grey darken-4">
+			<span class="tab-text center-align white-text">Canvas</span>
+		</div>
+		<div class="tab-item col s6 blue-grey darken-4">
+			<span class="tab-text center-align white-text">Settings</span>
+		</div>
 	</header>
 
 	<main>
-		<p>I am the homepage of your new application</p>
+		<!-- This section is visible by default !-->
+		<div id="window-section-Canvas" class="">
+		
+		</div>
+		
+		<!-- This section is hidden by default !-->
+		<div id="window-section-Settings" class="hide">
+			<h1>Settings page</h1>
+		</div>
 	</main>
 
 	<footer>
 		<h5>And I am its footer</h5>
 	</footer>
+
+	<script type="text/javascript" src="home.js"></script>
 </body>
 </html>
