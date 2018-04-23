@@ -8,7 +8,7 @@ exporter.random = () => {
  *
  * @param min: minimum value (will be included)
  * @param max: maximum value (will be included)
- * @returns an integer between the min and max bounds (included)
+ * @returns {number} an integer between the min and max bounds (included)
  */
 exporter.randInt = (min, max) => {
 	min = Math.ceil(min);
