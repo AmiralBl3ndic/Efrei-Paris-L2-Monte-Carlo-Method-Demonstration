@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-/issues"
   },
-  "homepage": "https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-#readme"
+  "homepage": "https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-#readme",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  },
+  "dependencies": {
+    "materialize-css": "^0.100.2"
+  }
 }
