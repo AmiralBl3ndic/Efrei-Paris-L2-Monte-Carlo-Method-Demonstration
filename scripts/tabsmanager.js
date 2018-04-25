@@ -22,14 +22,21 @@ function enableTabs () {
 	activeTab = $(".tab-group > .active");
 	let tabs = $(".tab-item");
 	
+	if (activeTab.hasClass("darken-4")) {
+		activeTab.removeClass("darken-4").addClass("darken-2");
+	}
+	
 	let tab;
 	for (tab = 0; tab < tabs.length; tab++) {
 		$(tabs[tab]).click(function () {
-			$(this).addClass("active");
-			$(activeTab).removeClass("active");
-			
-			$("#window-section-" + $(activeTab).children(".tab-text").text()).addClass("hide");
-			$("#window-section-" + $(this).children(".tab-text").text()).removeClass("hide");
+			if (! $(this).hasClass("active")) {
+				
+				$(this).addClass("active").removeClass("darken-4").addClass("darken-2");
+				$(activeTab).removeClass("active").removeClass("darken-2").addClass("darken-4");
+				
+				$("#window-section-" + $(activeTab).children(".tab-text").text()).addClass("hide");
+				$("#window-section-" + $(this).children(".tab-text").text()).removeClass("hide");
+			}
 			
 			activeTab = this;
 		});
