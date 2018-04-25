@@ -10,9 +10,12 @@
 	
 	<!-- Custom CSS !-->
 	<link rel="stylesheet" href="./style.css">
+	
+	<!-- P5 js !-->
+	<script type="text/javascript" src="../node_modules/p5/lib/p5.min.js"></script>
 </head>
 <body>
-	<header class="tab-group row center-align">
+	<header class="tab-group row center-align red">
 		<div class="tab-item active col s6 blue-grey darken-4">
 			<span class="tab-text center-align white-text">Canvas</span>
 		</div>
@@ -21,22 +24,18 @@
 		</div>
 	</header>
 
-	<main>
+	<main class="blue">
 		<!-- This section is visible by default !-->
-		<div id="window-section-Canvas" class="">
+		<div id="window-section-Canvas" class="main-section">
 		
 		</div>
 		
 		<!-- This section is hidden by default !-->
-		<div id="window-section-Settings" class="hide">
+		<div id="window-section-Settings" class="main-section hide">
 			<h1>Settings page</h1>
 		</div>
 	</main>
-
-	<footer>
-		<h5>And I am its footer</h5>
-	</footer>
-
+	
 	<script type="text/javascript" src="home.js"></script>
 </body>
 </html>
