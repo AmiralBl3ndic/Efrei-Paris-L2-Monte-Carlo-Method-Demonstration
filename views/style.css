@@ -1,7 +1,48 @@
-.tab-text {
-	font-size: 40px;
+body {
+	min-width: 100vw;
+	min-height: 100vh;
+	
+	margin: 0;
+	padding: 0;
+	
+	overflow: hidden !important;
 }
 
+
+header {
+	margin-top: 0;
+	padding: 0;
+}
+
+
+main {
+	height: 95vh;
+	margin-top: -2%;
+	padding-top: 0;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+
+.tab-text {
+	font-size: 50px;
+}
+
+
 .tab-item {
-	min-height: 2vh;
+	min-height: 20vh;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+
+.main-section {
+	height: 100%;
+	
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
