@@ -86,13 +86,14 @@
 					<!-- Conclusion !-->
 					<div class="row">
 						<div class="col s6 offset-s3 center-align conclusion">
-							<b>
-								<h5>
+							<h5>
+								<b>
+								
 									{{ time_conclusion }}
 									with a margin of error of {{ Math.abs(MonteCarloMethod.calculatedArea - classicMethod.drawnPixels) }} px
 									({{ (100 * MonteCarloMethod.calculatedArea / classicMethod.drawnPixels).toFixed(2) }} % of the reality)
-								</h5>
-							</b>
+								</b>
+							</h5>
 						</div>
 					</div>
 				</div>
