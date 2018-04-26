@@ -23,3 +23,20 @@ exporter.mainWindow = {
 	
 	url: "file://" + exporter.rootDir + "/views/home.html"
 };
+
+
+
+exporter.colors  = {
+	backgroundColor: {
+		r: 120,
+		g: 120,
+		b: 120
+	},
+	
+	drawColor: {
+		r: 0,
+		g: 0,
+		b: 0
+	}
+};
+
