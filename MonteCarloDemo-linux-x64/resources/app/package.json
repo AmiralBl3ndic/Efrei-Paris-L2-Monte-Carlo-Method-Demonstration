@@ -1,0 +1,33 @@
+{
+  "name": "montecarlo_demo__tai",
+  "version": "0.0.1",
+  "description": "A simple electron app to demonstrate how the Monte Carlo method is used",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . MonteCarloDemo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-.git"
+  },
+  "keywords": [
+    "MonteCarlo",
+    "Electron"
+  ],
+  "author": "Camille BRIAND <dev@camillebriand.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-/issues"
+  },
+  "homepage": "https://github.com/AmiralBl3ndic/MonteCarlo_demo_-TAI-#readme",
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "p5": "^0.6.0",
+    "vue": "^2.5.16"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2"
+  }
+}
