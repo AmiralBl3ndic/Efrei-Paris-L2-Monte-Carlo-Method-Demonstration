@@ -58,12 +58,14 @@ let settingsApp = new Vue({
 			calculatedArea: 0,
 			
 			executionTime: 0
-		}
+		},
+		
+		time_conclusion: ""
 	},
 	
 	
 	methods: {
-		runClassic: function () {
+		runClassic: () => {
 			settingsApp.classicMethod.drawnPixels = 0;
 			
 			let time = new Date().getTime();
@@ -77,10 +79,14 @@ let settingsApp = new Vue({
 			}
 			
 			settingsApp.classicMethod.executionTime = new Date().getTime() - time;
+			
+			if (settingsApp.MonteCarloMethod.executionTime !== 0 && settingsApp.MonteCarloMethod.executionTime > settingsApp.classicMethod.executionTime) {
+				settingsApp.conclusion = "Classic method was " + (settingsApp.MonteCarloMethod.executionTime / settingsApp.classicMethod.executionTime).toFixed(2) + " times more efficient";
+			}
 		},
 		
 		
-		runMonteCarlo: function () {
+		runMonteCarlo: () => {
 			settingsApp.MonteCarloMethod.detectedPixels = 0;
 			
 			let time = new Date().getTime();
@@ -97,7 +103,17 @@ let settingsApp = new Vue({
 			const mc = settingsApp.MonteCarloMethod;
 			mc.calculatedArea = Math.ceil((mc.detectedPixels / mc.tries) * settingsApp.totalPixels);
 			
-			settingsApp.MonteCarloMethod.executionTime = new Date().getTime() - time;
+			mc.executionTime = new Date().getTime() - time;
+			
+			if (settingsApp.classicMethod.executionTime !== 0 && mc.executionTime < settingsApp.classicMethod.executionTime) {
+				settingsApp.conclusion = "Monte Carlo method was " + (settingsApp.classicMethod.executionTime / mc.executionTime).toFixed(2) + " times more efficient";
+			}
+		},
+		
+		
+		runBoth: () => {
+			settingsApp.runClassic();
+			settingsApp.runMonteCarlo();
 		}
 	}
 });
