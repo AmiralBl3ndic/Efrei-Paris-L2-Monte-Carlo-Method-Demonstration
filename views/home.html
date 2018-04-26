@@ -35,40 +35,66 @@
 		
 		<!-- This section is hidden by default !-->
 		<div id="window-section-Settings" class="main-section row hide">
-			<div class="col s6">
-				<h2 class="center-align">Classic Method</h2>
-				<div class="btn btn-block" v-on:click="runClassic">Count pixels</div>
+			<div class="row">
+				<div class="col s6 offset-s3">
+					<h2 class="center-align">Classic Method</h2>
+					<div class="btn btn-block" v-on:click="runClassic">Count pixels</div>
+				</div>
 				
-				<!-- Results !-->
-				<div class="card-panel hoverable results">
-					<h3 class="center-align">Results</h3>
+				<div class="col s6 offset-s3">
+					<h2 class="center-align">Monte Carlo Method</h2>
+					<form>
+						<input
+							type="number"
+							v-model="MonteCarloMethod.tries"
+							title="Enter the number of attempts to perform"
+							placeholder="Enter the number of attempts to perform"
+						>
+					</form>
 					
-					<label>Total number of pixels: </label><b>{{ totalPixels }} px</b><br />
-					<label>Number of pixels counted: </label><b>{{ classicMethod.drawnPixels }} px</b><br />
-					<br />
-					<label>Execution time: </label><b>{{ classicMethod.executionTime }} ms</b>
+					<div class="btn btn-block" v-on:click="runMonteCarlo">Count pixels</div>
 				</div>
 			</div>
 			
-			
-			<div class="col s6">
-				<h2 class="center-align">Monte Carlo Method</h2>
-				<form>
-					<input type="number" v-model="MonteCarloMethod.tries" title="Enter the number of attempts to perform">
-				</form>
+			<!-- Results !-->
+			<div class="row results card-panel hoverable">
+				<h3 class="results center-align">Processing results</h3>
 				
-				<div class="btn btn-block" v-on:click="runMonteCarlo">Count pixels</div>
+				<div class="row center-align">
+					<label>Total number of pixels: </label><b>{{ totalPixels }}</b>
+				</div>
 				
-				<div class="card-panel hoverable results">
-					<h3 class="center-align">Results</h3>
+				<div class="row">
+					<div class="col s6 sub-results">
+						<h5>Classic Method</h5>
+						<label>Number of pixels counted: </label><b>{{ classicMethod.drawnPixels }} px</b><br />
+						<br />
+						<label>Execution time: </label><b>{{ classicMethod.executionTime }} ms</b>
+					</div>
 					
-					<label>Total number of pixels: </label><b>{{ totalPixels }} px</b><br />
-					<label>Number of random tries: </label><b>{{ MonteCarloMethod.tries }}</b><br />
-					<label>Number of pixels counted: </label><b>{{ MonteCarloMethod.detectedPixels }} px</b><br />
-					<br /><br />
-					<label>Estimated area: </label><b>{{ MonteCarloMethod.calculatedArea }} px</b>
-					<br /><br />
-					<label>Execution time: </label><b>{{ MonteCarloMethod.executionTime }} ms</b>
+					<!-- Monte Carlo Results !-->
+					<div class="col s6 sub-results">
+						<h5>Monte Carlo Method</h5>
+						<label>Number of random tries: </label><b>{{ MonteCarloMethod.tries }}</b><br />
+						<label>Number of pixels counted: </label><b>{{ MonteCarloMethod.detectedPixels }} px</b><br />
+						<br /><br />
+						<label>Estimated area: </label><b>{{ MonteCarloMethod.calculatedArea }} px</b>
+						<br /><br />
+						<label>Execution time: </label><b>{{ MonteCarloMethod.executionTime }} ms</b>
+					</div>
+					
+					<!-- Conclusion !-->
+					<div class="row">
+						<div class="col s6 offset-s3 center-align conclusion">
+							<b>
+								<h5>
+									{{ time_conclusion }}
+									with a margin of error of {{ Math.abs(MonteCarloMethod.calculatedArea - classicMethod.drawnPixels) }} px
+									({{ (100 * MonteCarloMethod.calculatedArea / classicMethod.drawnPixels).toFixed(2) }} % of the reality)
+								</h5>
+							</b>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

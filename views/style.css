@@ -5,9 +5,12 @@ body {
 	margin: 0;
 	padding: 0;
 	
-	overflow: hidden !important;
+	overflow: hidden;
 }
 
+#window-section-Settings {
+	overflow: scroll !important;
+}
 
 header {
 	margin-top: 0;
@@ -48,7 +51,7 @@ h1 {
 }
 
 .results {
-	margin-top: 25%;
+	margin: 2% 10%;
 }
 
 .results > h3 {
@@ -56,4 +59,19 @@ h1 {
 	padding-top: 0;
 	
 	border: solid black;
+}
+
+.sub-results > h5 {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.ratios > h3 {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.conclusion {
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
