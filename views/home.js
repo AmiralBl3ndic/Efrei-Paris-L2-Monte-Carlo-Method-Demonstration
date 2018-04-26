@@ -3,8 +3,6 @@ const tabs = require("./../scripts/tabsmanager");
 const $ = require("jquery");
 const rd = require("../scripts/random");
 
-const remote = require("electron").remote;
-
 tabs.enableTabs();
 
 const isDrawn =  (x, y) => {
