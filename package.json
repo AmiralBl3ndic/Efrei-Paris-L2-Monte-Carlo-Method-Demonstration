@@ -4,7 +4,8 @@
   "description": "A simple electron app to demonstrate how the Monte Carlo method is used",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . MonteCarloDemo"
   },
   "repository": {
     "type": "git",
