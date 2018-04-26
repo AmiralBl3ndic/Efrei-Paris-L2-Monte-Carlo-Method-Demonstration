@@ -63,7 +63,7 @@ let settingsApp = new Vue({
 	
 	
 	methods: {
-		runClassic () {
+		runClassic: function () {
 			settingsApp.classicMethod.drawnPixels = 0;
 			
 			let time = new Date().getTime();
@@ -80,7 +80,7 @@ let settingsApp = new Vue({
 		},
 		
 		
-		runMonteCarlo () {
+		runMonteCarlo: function () {
 			settingsApp.MonteCarloMethod.detectedPixels = 0;
 			
 			let time = new Date().getTime();
