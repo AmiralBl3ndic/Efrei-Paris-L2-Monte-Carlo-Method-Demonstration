@@ -65,7 +65,7 @@
 				</div>
 				
 				<div class="row">
-					<div class="col s6 sub-results">
+					<div class="col s4 offset-s2 sub-results">
 						<h5>Classic Method</h5>
 						<label>Number of pixels counted: </label><b>{{ classicMethod.drawnPixels }} px</b><br />
 						<br />
@@ -84,14 +84,14 @@
 					</div>
 					
 					<!-- Conclusion !-->
-					<div class="row">
+					<div class="row hide" id="conclusions">
 						<div class="col s6 offset-s3 center-align conclusion">
 							<h5>
 								<b>
 								
 									{{ time_conclusion }}
 									with a margin of error of {{ Math.abs(MonteCarloMethod.calculatedArea - classicMethod.drawnPixels) }} px
-									({{ (100 * MonteCarloMethod.calculatedArea / classicMethod.drawnPixels).toFixed(2) }} % of the reality)
+									({{ (Math.abs(100 - 100 * MonteCarloMethod.calculatedArea / classicMethod.drawnPixels)).toFixed(2) }} % inaccuracy)
 								</b>
 							</h5>
 						</div>

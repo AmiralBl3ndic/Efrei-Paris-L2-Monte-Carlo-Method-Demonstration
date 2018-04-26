@@ -80,8 +80,9 @@ let settingsApp = new Vue({
 			
 			settingsApp.classicMethod.executionTime = new Date().getTime() - time;
 			
-			if (settingsApp.MonteCarloMethod.executionTime !== 0 && settingsApp.MonteCarloMethod.executionTime > settingsApp.classicMethod.executionTime) {
-				settingsApp.conclusion = "Classic method was " + (settingsApp.MonteCarloMethod.executionTime / settingsApp.classicMethod.executionTime).toFixed(2) + " times more efficient";
+			if (settingsApp.MonteCarloMethod.executionTime !== 0 && settingsApp.classicMethod.executionTime !== 0 && settingsApp.MonteCarloMethod.executionTime > settingsApp.classicMethod.executionTime) {
+				settingsApp.time_conclusion = "Classic method was " + (settingsApp.MonteCarloMethod.executionTime / settingsApp.classicMethod.executionTime).toFixed(2) + " times more efficient";
+				$("#conclusions").removeClass("hide");
 			}
 		},
 		
@@ -105,8 +106,9 @@ let settingsApp = new Vue({
 			
 			mc.executionTime = new Date().getTime() - time;
 			
-			if (settingsApp.classicMethod.executionTime !== 0 && mc.executionTime < settingsApp.classicMethod.executionTime) {
-				settingsApp.conclusion = "Monte Carlo method was " + (settingsApp.classicMethod.executionTime / mc.executionTime).toFixed(2) + " times more efficient";
+			if (settingsApp.classicMethod.executionTime !== 0 && mc.executionTime !== 0 && mc.executionTime < settingsApp.classicMethod.executionTime) {
+				settingsApp.time_conclusion = "Monte Carlo method was " + (settingsApp.classicMethod.executionTime / mc.executionTime).toFixed(2) + " times more efficient";
+				$("#conclusions").removeClass("hide");
 			}
 		},
 		
