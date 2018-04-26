@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
 	
@@ -13,6 +13,9 @@
 	
 	<!-- P5 js !-->
 	<script type="text/javascript" src="../node_modules/p5/lib/p5.min.js"></script>
+	
+	<!-- VueJS !-->
+	<script type="text/javascript" src="../node_modules/vue/dist/vue.min.js"></script>
 </head>
 <body>
 	<header class="tab-group row center-align red">
@@ -24,15 +27,50 @@
 		</div>
 	</header>
 
-	<main class="blue">
+	<main>
 		<!-- This section is visible by default !-->
 		<div id="window-section-Canvas" class="main-section">
 		
 		</div>
 		
 		<!-- This section is hidden by default !-->
-		<div id="window-section-Settings" class="main-section hide">
-			<h1>Settings page</h1>
+		<div id="window-section-Settings" class="main-section row hide">
+			<div class="col s6">
+				<h2 class="center-align">Classic Method</h2>
+				<div class="btn btn-block" v-on:click="runClassic">Count pixels</div>
+				
+				<!-- Results !-->
+				<div class="card-panel hoverable results">
+					<h3 class="center-align">Results</h3>
+					
+					<label>Total number of pixels: </label><b>{{ totalPixels }} px</b><br />
+					<label>Number of pixels counted: </label><b>{{ classicMethod.drawnPixels }} px</b><br />
+					<br />
+					<label>Execution time: </label><b>{{ classicMethod.executionTime }} ms</b>
+				</div>
+			</div>
+			
+			
+			<div class="col s6">
+				<h2 class="center-align">Monte Carlo Method</h2>
+				<form>
+					<input type="number" v-model="MonteCarloMethod.tries">
+				</form>
+				
+				<div class="btn btn-block" v-on:click="runMonteCarlo">Count pixels</div>
+				
+				<div class="card-panel hoverable results">
+					<h3 class="center-align">Results</h3>
+					
+					<label>Total number of pixels: </label><b>{{ totalPixels }} px</b><br />
+					<label>Number of random tries: </label><b>{{ MonteCarloMethod.tries }}</b><br />
+					<label>Number of pixels counted: </label><b>{{ MonteCarloMethod.detectedPixels }} px</b><br />
+					<br /><br />
+					<label>Estimated area: </label><b>{{ MonteCarloMethod.calculatedArea }} px</b>
+					<br /><br />
+					<label>Execution time: </label><b>{{ MonteCarloMethod.executionTime }} ms</b>
+				</div>
+			</div>
 		</div>
 	</main>
 	
