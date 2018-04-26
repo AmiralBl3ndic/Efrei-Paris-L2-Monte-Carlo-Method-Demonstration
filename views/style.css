@@ -17,7 +17,7 @@ header {
 
 main {
 	height: 95vh;
-	margin-top: -2%;
+	margin-top: -1.65%;
 	padding-top: 0;
 }
 
@@ -45,4 +45,15 @@ h1 {
 	padding-top: 0;
 	margin-bottom: 0;
 	padding-bottom: 0;
+}
+
+.results {
+	margin-top: 25%;
+}
+
+.results > h3 {
+	margin-top: 0;
+	padding-top: 0;
+	
+	border: solid black;
 }
