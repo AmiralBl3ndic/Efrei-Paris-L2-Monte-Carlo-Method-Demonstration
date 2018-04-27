@@ -1,11 +1,13 @@
 {
   "name": "montecarlo_demo__tai",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple electron app to demonstrate how the Monte Carlo method is used",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . MonteCarloDemo"
+    "build": "electron-packager . MonteCarloDemo  --overwrite --out=build-releases",
+    "build-win64": "electron-packager . MonteCarloDemo --overwrite --out=build-releases --platform=win32 --arch=x64",
+    "build-all": "electron-packager . MonteCarloDemo --overwrite --out=build-releases && electron-packager . MonteCarloDemo --overwrite --out=build-releases --platform=win32 --arch=x64 && electron-packager . MonteCarloDemo --overwrite --out=build-releases --platform=win32 --arch=ia32"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,8 @@
     "vue": "^2.5.16"
   },
   "dependencies": {
+    "p5": "^0.6.0",
+    "vue": "^2.5.16",  
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2"
   }
