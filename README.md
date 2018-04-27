@@ -7,8 +7,15 @@ It will provide the exact area of the drawing and you will be able to select a p
 
 The aim of this software is to be as graphical and easy to use as possibles.
 
+
 -------------
 
 
 * Camille BRIAND - PS-SI.2 - EFREI Paris Promotion 2021
 * Jérémi FRIGGIT - PS-SI.2 - EFREI Paris Promotion 2021 
+
+--------------
+
+## Credits
+- Logo: Dots pattern by Hea Poh Lin from the Noun Project
+
