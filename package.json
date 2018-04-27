@@ -1,6 +1,6 @@
 {
   "name": "montecarlo_demo__tai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple electron app to demonstrate how the Monte Carlo method is used",
   "main": "main.js",
   "scripts": {
