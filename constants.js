@@ -15,8 +15,8 @@ exporter.mainWindow = {
 		frame: false,
 		
 		movable: true,
-		resizable: true,
-		fullscreenable: true,
+		resizable: false,
+		fullscreenable: false,
 		
 		icon: __dirname + "/icon.png"
 	},
