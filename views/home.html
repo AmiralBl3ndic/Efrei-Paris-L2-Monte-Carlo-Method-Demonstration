@@ -95,7 +95,7 @@
 								
 									{{ time_conclusion }}
 									with a margin of error of {{ Math.abs(MonteCarloMethod.calculatedArea - classicMethod.drawnPixels) }} px
-									({{ (Math.abs(100 - 100 * MonteCarloMethod.calculatedArea / classicMethod.drawnPixels)).toFixed(2) }} % inaccuracy)
+									({{ inaccuracy }} % inaccuracy)
 								</b>
 							</h5>
 						</div>

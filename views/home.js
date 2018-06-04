@@ -24,6 +24,8 @@ function setup () {
 }
 
 function draw () {
+	noStroke();
+
 	if (mouseIsPressed) {
 		const cl = cst.colors.drawColor;
 		fill(cl.r, cl.g, cl.b);
@@ -60,7 +62,9 @@ let settingsApp = new Vue({
 			executionTime: 0
 		},
 		
-		time_conclusion: ""
+		time_conclusion: "",
+
+		inaccuracy: 0
 	},
 	
 	
@@ -83,6 +87,11 @@ let settingsApp = new Vue({
 			if (settingsApp.MonteCarloMethod.executionTime !== 0 && settingsApp.classicMethod.executionTime !== 0 && settingsApp.MonteCarloMethod.executionTime > settingsApp.classicMethod.executionTime) {
 				settingsApp.time_conclusion = "Classic method was " + (settingsApp.MonteCarloMethod.executionTime / settingsApp.classicMethod.executionTime).toFixed(2) + " times more efficient";
 				$("#conclusions").removeClass("hide");
+                settingsApp.inaccuracy = (Math.abs(100 - 100 * settingsApp.MonteCarloMethod.calculatedArea / settingsApp.classicMethod.drawnPixels)).toFixed(2);
+                if (isNaN(settingsApp.inaccuracy)) {
+                    alert("No shape detected, click the canvas to draw a shape and then perform these operations");
+                    settingsApp.inaccuracy = 0;
+                }
 			}
 		},
 		
@@ -109,6 +118,11 @@ let settingsApp = new Vue({
 			if (settingsApp.classicMethod.executionTime !== 0 && mc.executionTime !== 0 && mc.executionTime < settingsApp.classicMethod.executionTime) {
 				settingsApp.time_conclusion = "Monte Carlo method was " + (settingsApp.classicMethod.executionTime / mc.executionTime).toFixed(2) + " times more efficient";
 				$("#conclusions").removeClass("hide");
+                settingsApp.inaccuracy = (Math.abs(100 - 100 * settingsApp.MonteCarloMethod.calculatedArea / settingsApp.classicMethod.drawnPixels)).toFixed(2);
+                if (isNaN(settingsApp.inaccuracy)) {
+                	alert("No shape detected, click the canvas to draw a shape and then perform these operations");
+                    settingsApp.inaccuracy = 0;
+				}
 			}
 		},
 		
